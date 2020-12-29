@@ -1,0 +1,69 @@
+:root {
+    --chartPrimaryBackgroundColor: rgb(255, 255, 255);
+    --chartSecondaryBackgroundColor: rgb(255, 255, 255);
+    --defaultLineStrokeColor: black;
+}
+
+pre {
+    margin:0;
+}
+
+.ChartContainer {
+    margin: 50px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    border: 1px solid black;
+
+    background-color: var(--chartPrimaryBackgroundColor);
+}
+
+.PoinMarker{
+    fill: var(--chartSecondaryBackgroundColor);
+    stroke-width: 1;
+    stroke: var(--defaultLineStrokeColor);
+}
+
+.LineChart {
+    width: 100%;
+    height: 100%;
+
+    background-color: transparent;
+}
+.PlotBackground{
+    fill: var(--chartSecondaryBackgroundColor);
+}
+
+#toolTipContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+
+.ChartTooltip {
+    position: absolute;
+    background-color: var(--chartSecondaryBackgroundColor);
+
+    border: 1px solid black;
+    padding: 3px 5px 5px 5px;
+    border-radius: 4px;
+}
+
+.ChartTooltip::after {
+    content: "";
+    position: absolute;
+    top: calc(100% - 5px);
+    left: calc(50% - 5px);
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    border-width: 1px;
+    border-style: solid;
+    background-color: var(--chartSecondaryBackgroundColor);
+    border-color: transparent black black transparent;
+}
+
+.TTDataContainer {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+}
